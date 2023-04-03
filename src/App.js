@@ -26,10 +26,13 @@ const App = () => {
     },
   ];
 
-  const addExpenseHandler = (expense) => {
-    console.log(expense);
-  };
+  const [expenseList, setExpenseList] = useState(expenses);
 
+  const addExpenseHandler = (expense) => {
+    console.log(expenses);
+    setExpenseList(...expenses,expense);
+  };
+  
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
